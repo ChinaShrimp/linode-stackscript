@@ -22,3 +22,6 @@ hostname -F /etc/hostname
 
 # This section sets the Fully Qualified Domain Name (FQDN) in the hosts file.
 echo $IPADDR $FQDN $HOSTNAME >> /etc/hosts
+
+# prefer IPv4 over IPv6
+sed -i 's/^#prece.*100/precedence ::ffff:0:0\/96  100/' /etc/gai.conf
