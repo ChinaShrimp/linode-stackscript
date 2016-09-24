@@ -15,7 +15,7 @@ file { 'oh-my-zsh-install.sh':
 
 exec { 'oh-my-zsh':
   path => '/usr/bin:/usr/sbin:/bin',
-  command => '/tmp/install.sh',
+  command => 'bash /tmp/install.sh',
 }
 
 # to avoid bad ssh pipe when using ssh login
