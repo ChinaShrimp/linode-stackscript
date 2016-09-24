@@ -25,3 +25,7 @@ echo $IPADDR $FQDN $HOSTNAME >> /etc/hosts
 
 # prefer IPv4 over IPv6
 sed -i 's/^#prece.*100/precedence ::ffff:0:0\/96  100/' /etc/gai.conf
+
+# install zsh and oh-my-zsh
+apt-get install -y curl git zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
