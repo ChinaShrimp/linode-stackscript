@@ -32,3 +32,8 @@ service apache2 reload
 
 cd /opt/otrs
 bin/otrs.SetPermissions.pl --web-group=www-data
+
+# install mariadb
+puppet module install puppetlabs-mysql
+wget -O /tmp/mysql.pp https://raw.githubusercontent.com/ChinaShrimp/linode-stackscript/master/mysql.pp
+/opt/puppetlabs/bin/puppet apply /tmp/mysql.pp
